@@ -1,6 +1,14 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
+  # leveraging petergate gem
+  # Allows anyone to see show and indec
+  # logged in users can do anything EXCEPT destroy, new, create, update, edit
+  # site_admin can do everything
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
+
+  
   # this will make the layout for this controller the blog.html.erb
   layout "blog"
 
