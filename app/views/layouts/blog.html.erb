@@ -12,8 +12,13 @@
   </head>
 
   <body>
+    <%# this will render the partial views/shared/_nav.html.erb %>
+    <%# you can pass variables into the partial with the second argument %>
+    <%= render "shared/nav", location: :blog %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
     <%= yield %>
 
     <% if current_user.is_a?(User) %>
@@ -22,5 +27,6 @@
       <%= link_to "Register", new_user_registration_path  %>
       <%= link_to "Login", new_user_session_path %>
     <% end %>
+
   </body>
 </html>
