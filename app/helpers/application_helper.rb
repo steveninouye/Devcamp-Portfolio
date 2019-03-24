@@ -7,4 +7,9 @@ module ApplicationHelper
        (link_to "Login", new_user_session_path)
     end 
   end  
+
+  def sample_helper
+    content_tag(:div, "My content", class: "my-class")
+  end
+  
 end
