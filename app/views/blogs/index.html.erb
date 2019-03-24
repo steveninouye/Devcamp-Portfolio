@@ -15,6 +15,10 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.title %></td>
+
+        <%# this will find the difference in time from created at to now%>
+        <td><%= distance_of_time_in_words(blog.created_at, Time.now) %></td>
+        
         <td><%= blog.body %></td>
         <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
         <td><%= link_to 'Show', blog %></td>
