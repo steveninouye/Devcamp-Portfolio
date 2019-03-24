@@ -18,7 +18,7 @@
 
         <%# this will find the difference in time from created at to now%>
         <td><%= distance_of_time_in_words(blog.created_at, Time.now) %></td>
-        
+
         <td><%= blog.body %></td>
         <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
         <td><%= link_to 'Show', blog %></td>
@@ -28,6 +28,16 @@
     <% end %>
   </tbody>
 </table>
+
+<%#
+  helpful number methods
+
+  distance_of_time_in_words(blog.created_at, Time.now)
+  number_to_phone "55555555"
+  number_to_currency "150"   
+  number_to_percentage "80.4"  
+  number_with_delimeter "3456436435435"      adds commas to number
+%>
 
 <br>
 
