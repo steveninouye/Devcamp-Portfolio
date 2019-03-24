@@ -1,10 +1,11 @@
 class Portfolio < ApplicationRecord
+  validates_presence_of :title, :body, :main_image, :thumb_image
   has_many :technologies
+   
   accepts_nested_attributes_for :technologies, reject_if: lambda {|attrs| attrs['name'].blank?}
 
   # this is from concerns directdory   /models/concerns/placeholder.rb
   include Placeholder
-  validates_presence_of :title, :body, :main_image, :thumb_image
 
   # this can be written as
   # scope :angular, -> { where(subtitle: 'Angular') }

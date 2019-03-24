@@ -18,11 +18,12 @@
   </div>
 
   <ul>
+  <%# this makes 3 text input fields because the controller builds 3 technologies on the portfolio instance %>
     <%= form.fields_for :technologies do |technology_form| %>
-    <li>
-      <%= technology_form.label :name %>
-      <%= technology_form.text_field :name %>
-    </li>
+      <li>
+        <%= technology_form.label :name %>
+        <%= technology_form.text_field :name %>
+      </li>
     <% end %>
   </ul>
 
