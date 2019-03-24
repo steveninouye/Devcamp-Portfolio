@@ -41,4 +41,5 @@
 
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+<%# This is leveraging petergate gem.  will show "New Blog" link only if it is logged in as site_admin %>
+<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
